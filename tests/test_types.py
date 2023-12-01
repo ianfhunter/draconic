@@ -31,6 +31,17 @@ class TestList:
         e("a = [1, 2, 3]")
         e("a.clear()")
         assert e("a") == []
+        
+    def test_join(self, e):
+        # Test Integer Join
+        e("a = [1, 2, 3]")
+        e("a.join('-')")
+        assert e("a") == "1-2-3"
+
+        # Test String Join
+        e("a = ['A', 'B', 'C']")
+        e("a.join(',')")
+        assert e("a") == "A,B,C"
 
 
 class TestSet:
