@@ -82,6 +82,10 @@ def safe_list(config):
             super().clear()
             self.__approx_len__ = 0
 
+        def join(self, seperator: str):
+            # Gets a string object from a SafeList where each item is seperated by a parameterized token
+            return self.data.join(seperator)
+        
         def __mul__(self, n):
             # to prevent the recalculation of the length on list mult we manually set a new instance's
             # data and approx len (JIRA-54)
